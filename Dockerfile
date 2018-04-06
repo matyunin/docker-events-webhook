@@ -7,4 +7,4 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 RUN dep ensure
 RUN go install -v ./...
 
-CMD ["docker-events-webhook"]
+CMD ["/go/bin/app"]
