@@ -31,3 +31,22 @@ Above example using docker image:
 ```bash
 docker run -d -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=unix:///var/run/docker.sock -e WEBHOOK_URI=http://requestbin.fullcontact.com/11956ck1 matyunin/docker-events-webhook
 ```
+
+On other side you will receive a messages like this:
+
+```json
+{
+  "status": "push",
+  "id": "matyunin/docker-events-webhook:latest",
+  "Type": "image",
+  "Action": "push",
+  "Actor": {
+    "ID": "matyunin/docker-events-webhook:latest",
+    "Attributes": {
+      "name": "matyunin/docker-events-webhook"
+    }
+  },
+  "time": 1523027703,
+  "timeNano": 1523027703594899700
+}
+```
