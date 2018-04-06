@@ -29,8 +29,5 @@ DOCKER_HOST=unix:///var/run/docker.sock WEBHOOK_URI=http://requestbin.fullcontac
 Above example using docker image:
 
 ```bash
-docker run -d \
-    -e DOCKER_HOST=unix:///var/run/docker.sock \ 
-    -e WEBHOOK_URI=http://requestbin.fullcontact.com/11956ck1 \
-    matyunin/docker-events-webhook
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=unix:///var/run/docker.sock -e WEBHOOK_URI=http://requestbin.fullcontact.com/11956ck1 matyunin/docker-events-webhook
 ```
